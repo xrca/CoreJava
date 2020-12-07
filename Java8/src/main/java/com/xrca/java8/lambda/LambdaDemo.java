@@ -19,8 +19,36 @@ import java.util.stream.Collectors;
  * @date 2020/11/6 22:31
  **/
 public class LambdaDemo {
+    private static String HOST = "192.168.0.200";
 
+    private int processors = 8;
 
+    public static void main(String[] args) {
+        new LambdaDemo().testLambda();
+    }
+
+    /**
+     * @author xrca
+     * @description Lambda可以没有限制地捕获（也就是在其主体中引用）实例变量和静态变量。
+     * 但是局部变量必须显式声明final，或事实上时final。换句话说，Lambda表达式之恩那个捕获指派给他们的局部变量一次。
+     * @date 2020/12/7 23:17
+     **/
+    @Test
+    public void testLambda() {
+        //
+        int portNumber = 6379;
+        Runnable runnable = () -> {
+            // portNumber = 8080; 不允许
+            System.out.println(HOST);
+            System.out.println(processors);
+            System.out.println(portNumber);
+        };
+
+        new Thread(runnable).start();
+
+        //portNumber = 3306; 不允许
+        processors = 16;
+    }
 
     /**
      * @author xrca

@@ -1,6 +1,8 @@
 package com.xrca.java8.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author xrca
@@ -8,6 +10,8 @@ import lombok.Data;
  * @date 2020/11/6 22:31
  **/
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
     private Long studentId;
 

@@ -30,11 +30,14 @@ public class DateAPI {
         Date date = new Date();
         System.out.println(date);
 
-        new Date(111, 2, 1);
+        // 从1990年算起，增加指定参年数
+        System.out.println(new Date(111, 2, 1));
 
         Calendar calendar = Calendar.getInstance();
 
+        // 清除所设置，将日历拨到1970.01.01 00:00:00
         calendar.clear();
+        System.out.println(calendar.getTime());
 
         calendar.set(Calendar.YEAR, 1840);
 
@@ -87,7 +90,7 @@ public class DateAPI {
 
     /**
      * @author xrca
-     * @description LocalTime类
+     * @description LocalTime类，不可变类，就提供时分秒等时间，并未提供年月日等数据
      * @date 2020/12/7 22:36
      **/
     @Test
@@ -126,7 +129,8 @@ public class DateAPI {
 
     /**
      * @author xrca
-     * @description 这个复合类名叫LocalDateTime，是LocalDate和LocalTime的合体。它同时表示了日期和时间，但不带有时区信息，你可以直接创建，也可以通过合并日期和时间对象构造
+     * @description 这个复合类名叫LocalDateTime，是LocalDate和LocalTime的合体。它同时表示了日期和时间，但不带有时区信息，
+     * 你可以直接创建，也可以通过合并日期和时间对象构造
      * @date 2020/12/7 11:38
      **/
     @Test

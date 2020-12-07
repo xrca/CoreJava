@@ -18,11 +18,11 @@ public class TestFunction {
     public void testFunction() {
         List<String> list = Arrays.asList("abcdefghijk", "com", "cn", "woaizhongguo", "nihao", "xsa", "wqwe");
         Function<String, String> function = (s) -> "element -> " + s;
-        List<String> result = forEach(list, function);
+        List<String> result = iterator(list, function);
         result.forEach(System.out::println);
     }
 
-    public static <T, R> List<R> forEach(List<T> list, Function<T, R> function) {
+    public static <T, R> List<R> iterator(List<T> list, Function<T, R> function) {
         List<R> result = new ArrayList<>();
         if (list != null) {
             for (T t : list) {
