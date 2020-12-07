@@ -20,7 +20,7 @@ public class LambdaAPI {
     public void testStream() {
         List<Student> students = new ArrayList<>();
         students.stream();
-        students.parallelStream();
+        students.parallelStream().map(Student::getAge);
     }
 
     /**
