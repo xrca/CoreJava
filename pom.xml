@@ -12,6 +12,7 @@
         <module>IO</module>
         <module>Java8</module>
         <module>JUC</module>
+        <module>JavaProxy</module>
     </modules>
 
     <dependencyManagement>
