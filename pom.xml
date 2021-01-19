@@ -13,6 +13,7 @@
         <module>Java8</module>
         <module>JUC</module>
         <module>JavaProxy</module>
+        <module>Reflection</module>
     </modules>
 
     <dependencyManagement>
