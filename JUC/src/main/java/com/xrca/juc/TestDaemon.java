@@ -1,6 +1,7 @@
 package com.xrca.juc;
 
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 /**
  * @author xrca
@@ -9,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  **/
 public class TestDaemon {
     public static void main(String[] args) throws Exception {
+        IntStream.range(1, 100).forEach(i -> System.out.println(i));
         Thread t1 = new Thread(() -> {
             while (true) {
                 System.out.println("====================");
@@ -21,9 +23,10 @@ public class TestDaemon {
         });
 
         t1.start();
-        t1.setDaemon(true);
+        //t1.setDaemon(true);
         TimeUnit.SECONDS.sleep(3);
 
+        IntStream.range(1, 100).forEach(i -> System.out.println(i));
 
     }
 }
